@@ -1,0 +1,6 @@
+{
+    "python.pythonPath": "D:\\Django\\Django\\Scripts\\python.exe",
+    "python.linting.pylintArgs": [
+        "--load-plugins=pylint_Django"
+    ]
+}
