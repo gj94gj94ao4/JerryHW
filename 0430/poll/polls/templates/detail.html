@@ -1,0 +1,7 @@
+<h1>{{p}}</h1>
+<br>
+{% for c in p.choice_set.all %}
+<div>{{c}}票數:{{c.chount}}</div>
+{% endfor %}
+<a href="/view/{{p.id}}">再次投票?</a>
+<a href="/list/">回選單</a>

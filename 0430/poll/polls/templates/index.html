@@ -1,0 +1,7 @@
+<html>
+    <h1>投票列表</h1>
+    {% for p in poll %}
+    <a href="/view/{{p.id}}">{{p}}</a>
+    <br>
+    {% endfor %}
+</html>
