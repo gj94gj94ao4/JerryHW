@@ -1,0 +1,11 @@
+<html>
+    <h1>List</h1>
+    <div>對媽媽說的留言</div>
+    {% if post %}
+        {% for p in post %}
+        <div>{{p.auther}}:{{p.text}}</div>
+        {% endfor %}
+    {% else %}
+        <h2>沒有留言</h2>
+    {% endif %}
+</html>
