@@ -1,0 +1,18 @@
+<h1>myblog</h1>
+<form action="/blog/post/" method="POST">
+    {% csrf_token %}
+    TITLE:<input type="text" name="title"><br>
+    內容:<input type="text" name="Content"><br>
+    <p><input type="submit" value="送出"></p>
+</form>
+{% for bp in bps %}
+<div>-----------------------------------------</div>
+<div>TITLE: {{bp.title}}   </div>
+<div>內容:  {{bp.Content}}</div>
+<form action="/blog/delete/{{bp.id}}" method="POST">{% csrf_token %}<input type="submit" value="delete"></form>
+<form action="/blog/edit/{{bp.id}}" method="POST">{% csrf_token %}
+    newTitle:<input type="text" name="title"><br>
+    new內容:<input type="text" name="Content"><br><input type="submit" value="edit"></form>
+<div>-----------------------------------------</div>
+<br>
+{% endfor %}
