@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        var result;
+        var a = 41;
+        var b = 5;
+
+        function exe(code){
+            a = Number(document.getElementById("a").value);
+            b = Number(document.getElementById("b").value);
+            switch (code) {
+                case 1:
+                    result = a + b;
+                    break;
+                case 2:
+                    result = a - b;
+                    break;
+                case 3:
+                    result = a * b;
+                    break;
+                case 4:
+                    result = a / b;
+                    break;
+            }
+            document.getElementById("yyi").innerText=result;
+        }
+
+        function clean(){
+            document.getElementById("b").value = "";
+            document.getElementById("a").value = "";
+            document.getElementById("yyi").innerHTML = "";
+        }
+
+
+        function hyouka(){
+            var front = "你的評價為:"
+            score = Number(document.getElementById("score").value);
+            if(score>=60){
+                front += "及格";
+            }
+            else{
+                front +="不及格";
+            }
+            document.getElementById("hyouka").innerHTML = front;
+        }
+    </script>
+    <h2>第一題:簡易計算機</h2>
+    <input type="text" name="" id="a" value="5">
+    <input type="text" name="" id="b" value="3">
+    <button onclick="exe(1)">+</button>
+    <button onclick="exe(2)">-</button>
+    <button onclick="exe(3)">*</button>
+    <button onclick="exe(4)">/</button>
+    <button onclick="clean()">C</button>
+    <p id="yyi"></p>
+    <h2>第二題:成績判斷</h2>
+    <input type="text" name="" id="score" value="50">
+    <button onclick="hyouka()">評價</button>
+    <p id="hyouka">你的評價為:</p>
+
+
+</body>
+</html>

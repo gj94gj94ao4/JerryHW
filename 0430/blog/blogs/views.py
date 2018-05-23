@@ -5,12 +5,14 @@ from django.http.response import HttpResponseRedirect, HttpResponse
 from .models import BlogPost
 
 def blog(request):
-    bps = BlogPost.objects.all()
+    print(request)
+    bps = BlogPost.objects.order_by("-id")
     content = {'bps':bps}
     return render(request, 'blog.html', content)
 
 def post(request):
     bp = BlogPost()
+    print(request)
     bp.title = request.POST.get("title")
     bp.Content = request.POST.get("Content")
     bp.save()
